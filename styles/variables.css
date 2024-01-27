@@ -2,3 +2,26 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+
+:root {
+  --accent-color: #ff0070;
+  --heading-color: #db00ff;
+  --dark-color: #000028;
+  --light-color: #f1b2ce;
+
+  --border: 1px solid var(--accent-color);
+  --background-color: var(--dark-color);
+  --background-image: url(../images/cover-image-dark.png);
+  --decorated-zone-color: var(--accent-color);
+  --header__menu-color: var(--accent-color);
+  --header__menu-color-hover: #ff007066;
+  --heading__text-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --section-heading-color: var(--accent-color);
+  --section__content-text-color: var(--light-color);
+}
+
+@media (width >= 768px) {
+  :root {
+    --heading__text-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
