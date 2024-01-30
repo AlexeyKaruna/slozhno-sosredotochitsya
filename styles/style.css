@@ -1,7 +1,6 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
   max-width: 1024px;
+  margin: 0 auto;
   background-image: var(--background-image);
   background-position: center;
   background-size: cover;
@@ -59,9 +58,6 @@
 
 .header {
   position: relative;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
   padding: 10px;
   margin-bottom: 40px;
   min-height: 668px;
@@ -69,14 +65,14 @@
 }
 
 .header__theme-menu {
-  margin-top: 65px;
-  margin-bottom: 65px;
+  display: flex;
+  justify-content: end;
+  margin: 65px 0;
 }
 
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
-  align-items: end;
   gap: 10px;
 }
 
@@ -141,6 +137,12 @@
   margin-bottom: 20px;
 }
 
+.section__sub-heading-gallery {
+  background-color: var(--accent-color);
+  color: var(--dark-color);
+  margin-bottom: 10px;
+}
+
 .section__content-list {
   display: grid;
   gap: 20px;
@@ -188,7 +190,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
-  margin-top: 10px;
+  margin-bottom: 40px;
 }
 
 .gallery__image {
@@ -200,20 +202,18 @@
 
 .footer {
   position: relative;
-  margin-top: 40px;
   padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 668px;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer__heading {
   font-size: var(--heading__text-size);
   color: var(--heading-color);
   line-height: 82.5%;
-  padding: 276px 0px 275px 0px;
   text-shadow: 2px 2px 0px var(--accent-color);
 }
 
@@ -236,12 +236,10 @@
   .header {
     padding: 20px;
     margin-bottom: 60px;
-    min-height: 1024px;
   }
 
   .header__theme-menu {
-    margin-top: 182px;
-    margin-bottom: 173px;
+    margin: 173px 0 172px 0;
   }
 
   .header__title {
@@ -249,9 +247,13 @@
     margin-bottom: 162px;
   }
 
+  .header__description-container {
+    display: flex;
+    justify-content: end;
+  }
+
   .header__description {
-    align-self: flex-end;
-    max-inline-size: 364px;
+    inline-size: clamp(364px, calc(100% / 2 - 10px), 491px);
   }
 
   .main {
@@ -277,11 +279,15 @@
     display: grid;
   }
 
+  .section__sub-heading-gallery {
+    margin-bottom: 20px;
+  }
+
   .gallery {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, auto);
     gap: 20px;
-    margin-top: 20px;
+    margin-bottom: 60px;
   }
 
   .image-sunset {
@@ -305,38 +311,26 @@
   }
 
   .footer {
-    margin-top: 60px;
     padding: 20px;
-    min-height: 1024px;
   }
 
   .footer__heading {
-    padding: 443px 0px 442px 0px;
   }
 }
 
 @media (width >= 1024px) {
-  .header {
-    min-height: 768px;
-  }
-
   .header__theme-menu {
-    margin-top: 0;
-    margin-bottom: 273px;
+    justify-content: center;
+    margin: 0px 0px 273px 0px;
   }
 
   .header__theme-menu-list {
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
   }
 
   .header__title {
     margin-bottom: 114px;
-  }
-
-  .header__description {
-    max-inline-size: 491px;
+    text-shadow: 4px 4px 0px #ff0070;
   }
 
   .section__heading {
@@ -352,12 +346,7 @@
     margin-top: 5px;
   }
 
-  .footer {
-    min-height: 768px;
-  }
-
   .footer__heading {
-    padding: 299px 0px 299px 0px;
     text-shadow: 2px 2px 0px #ff0070;
   }
 }
